@@ -7,8 +7,16 @@ function Navbar() {
   const [open, setOpen] = useState(false)
   const [dropdown, setDropdown] = useState(null)
 
+
+  const ScrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
+  }
+
   return (
-    <nav className='bg-[#041a4f] text-white fixed w-full h-17'>
+    <nav className='bg-[#041a4f] text-white fixed w-full h-17 z-20'>
       <div className='flex justify-between p-4'>
         <NavLink to="/" className="flex gap-2 hover:scale-105 duration-700 ease-in-out items-center ml-6">
           <img src="/logos.jpg" alt="logo" className='h-10 w-10' />
@@ -45,7 +53,17 @@ function Navbar() {
                         >
                           <Link
                             to={item.path}
-                            onClick={() => setDropdown(null)}
+                            onClick={() => 
+
+                              {
+                              setDropdown(null),
+                              ScrollTop
+
+
+                              }
+                            
+                            
+                            }
                           >
                             {item.name}
                           </Link>
@@ -56,7 +74,7 @@ function Navbar() {
                   )}
                 </>
               ) : (
-                <Link to={link.path}>
+                <Link onClick={ScrollTop} to={link.path}>
                   {link.name}
                 </Link>
               )}

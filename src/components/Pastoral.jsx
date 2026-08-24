@@ -10,7 +10,7 @@ function Pastoral() {
             <p className="text-center p-4">Our pastoral team serves with humility, biblical conviction, and a heart for God's people.
 
             </p>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-4 rounded-sm '>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-6 ml-10 mr-15 rounded-sm '>
                 {
                     PastoralTeam.map((proj) => (
                         <PastoralTeams

@@ -3,28 +3,126 @@ import { Link } from 'react-router-dom'
 
 function Hero() {
   return (
-    <div className="bg-[url('/churchimg.jpg')] bg-cover bg-center h-screen items-center flex flex-col justify-center gap-4">
-      <h1 className="text-5xl text-green-400 font-bold pt-20 px-20 py-5">Welcome Home</h1>
-      <p className='text-blue-600 text-3xl font-bold px-10'>A place to Belong <span>A Faith to Live</span> </p>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[url('/praying.png')] bg-cover bg-center">
 
-      <p className='text-gray-800 text-justify text-xl py-2 px-3'>We are a Christ-centered church family seeking to know God, love people, grow together, and share the hope of the Gospel.</p>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/30"></div>
 
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 sm:px-10 lg:px-20 max-w-5xl">
 
-      <div className='flex gap-2 mx-8 my-4 '>
+        {/* Heading */}
+        <h1 className="
+          text-4xl sm:text-5xl md:text-6xl lg:text-7xl
+          font-extrabold
+          tracking-tight
+          text-[#041a4f]
+          drop-shadow-[0_3px_5px_rgba(255,255,255,0.5)]
+          transition-all duration-700
+          hover:scale-105
+          cursor-default
+        ">
+          Welcome Home
+        </h1>
 
-        <Link to="/plan-a-visit">
-          <button className='bg-green-400 hover:scale-105 transition duration-700 p-3 font-bold text-white'>Plan Your Visit</button>
+        {/* Subtitle */}
+        <p className="
+          mt-5
+          text-2xl sm:text-3xl md:text-4xl
+          font-bold
+          text-[#041a4f]
+          tracking-wide
+          transition-all duration-500
+          hover:tracking-wider
+        ">
+          A place to Belong{" "}
+          <span className="italic">
+            A Faith to Live
+          </span>
+        </p>
 
-        </Link>
+        {/* Description */}
+        <p className="
+          mt-6
+          max-w-3xl
+          text-base sm:text-lg md:text-xl
+          leading-relaxed
+          text-[#041a4f]
+          font-medium
+          drop-shadow-[0_2px_3px_rgba(255,255,255,0.7)]
+          transition-all duration-500
+          hover:scale-[1.02]
+        ">
+          We are a Christ-centered church family seeking to know God,
+          love people, grow together, and share the hope of the Gospel.
+        </p>
 
-        <Link to="/sermons">
-          <button className='border border-green-500 hover:scale-105 duration-700 transition p-2 font-bold text-green-700'>Watch Sermons</button>
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 mt-9">
 
+          <Link to="/plan-a-visit">
+            <button
+              className="
+                group
+                px-7 py-3.5
+                rounded-full
+                bg-green-500
+                text-white
+                font-bold
+                shadow-lg
+                shadow-green-500/30
+                transition-all
+                duration-500
+                hover:scale-103
+                active:scale-95
+              "
+            >
+              Plan Your Visit
+              <span className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </button>
+          </Link>
 
-        </Link>
+          <Link to="/sermons">
+            <button
+              className="
+                group
+                px-7 py-3.5
+                rounded-full
+                border-2
+                border-green-600
+                text-white
+                font-bold
+                backdrop-blur-sm
+                transition-all
+                duration-500
+                hover:scale-103
+                hover:text-white
+                active:scale-95
+              "
+            >
+              Watch Sermons
+              <span className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </button>
+          </Link>
+
+        </div>
+
+        {/* Decorative line */}
+        <div className="
+          mt-10
+          w-20 h-1
+          bg-green-500
+          rounded-full
+          transition-all duration-500
+          hover:w-32
+        "></div>
+
       </div>
-
-    </div>
+    </section>
   )
 }
 
