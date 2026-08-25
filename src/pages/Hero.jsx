@@ -16,7 +16,7 @@ function Hero() {
           text-4xl sm:text-5xl md:text-6xl lg:text-7xl
           font-extrabold
           tracking-tight
-          text-[#041a4f]
+          text-white
           drop-shadow-[0_3px_5px_rgba(255,255,255,0.5)]
           transition-all duration-700
           hover:scale-105
@@ -30,7 +30,7 @@ function Hero() {
           mt-5
           text-2xl sm:text-3xl md:text-4xl
           font-bold
-          text-[#041a4f]
+          text-white
           tracking-wide
           transition-all duration-500
           hover:tracking-wider
@@ -47,7 +47,7 @@ function Hero() {
           max-w-3xl
           text-base sm:text-lg md:text-xl
           leading-relaxed
-          text-[#041a4f]
+          text-white
           font-medium
           drop-shadow-[0_2px_3px_rgba(255,255,255,0.7)]
           transition-all duration-500

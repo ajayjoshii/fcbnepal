@@ -8,6 +8,11 @@ import Contact from './pages/Contact';
 import Statementfaith from './pages/About/Statementfaith';
 import Church_CovenantParent from './components/Church_Covenant/Church_CovenantParent';
 import ScrollToTop from './components/ScrollToTop';
+import Ladies_Bible from './pages/Ministries/Ladies_Bible';
+import Mens_Bible from './pages/Ministries/Mens_Bible';
+import Pastoral from './pages/Ministries/Pastoral';
+import Sunday from './pages/Ministries/Sunday';
+import Sermons from './pages/Sermons';
 
 function App() {
   return (
@@ -20,6 +25,11 @@ function App() {
         <Route path='/plan-a-visit' element={<Contact />} />
         <Route path='/about/statement-of-faith' element={<Statementfaith />} />
         <Route path='/about/church-covenant' element={<Church_CovenantParent />} />
+        <Route path='/ministries/ladies-bible-studies' element={<Ladies_Bible />} />
+        <Route path='/ministries/mens-bible-studies' element={<Mens_Bible />} />
+        <Route path='/ministries/pastoral-internship' element={<Pastoral/>} />
+        <Route path='/ministries/sunday-school' element={<Sunday/>} />
+        <Route path='/sermons' element={<Sermons/>} />
       </Routes>
       <Footer />
 

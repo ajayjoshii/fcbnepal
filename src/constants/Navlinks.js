@@ -18,6 +18,7 @@ export const navLinks = [
     submenu: [
       { name: " Ladies bible studies", path: "/ministries/ladies-bible-studies" },
       { name: " Men's bible studies", path: "/ministries/mens-bible-studies" },
+      { name: "Pastoral Internship", path: "/ministries/pastoral-internship" },
       { name: "Sunday school", path: "/ministries/sunday-school" },
     ]
   },

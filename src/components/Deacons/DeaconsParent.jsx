@@ -12,7 +12,7 @@ function DeaconsParent() {
 
 
             </p>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-6 ml-10 mr-15 rounded-sm '>
+            <div className='grid md:grid-cols-2 gap-6 md:ml-10 md:mr-15 ml-4 mr-4 rounded-sm '>
                 {
                     Deacons.map((proj) => (
                         <DeaconsChild
