@@ -15,7 +15,7 @@ function Mens_Bible() {
         </p>
       </div>
 
-      <div className='flex items-center justify-center p-4 gap-6'>
+      <div className='flex items-center justify-center p-4 gap-6 flex-col md:flex-row'>
         <div className='flex flex-col gap-6 max-w-xl rounded-xl bg-yellow-50 p-6'>
           <FaBookOpen className='text-4xl text-green-400' />
           <h1 className='font-bold text-3xl text-left'>Our Men's Bible Studies</h1>
@@ -39,7 +39,7 @@ function Mens_Bible() {
 
       <Link to='/plan-a-visit' className='text-left relative bottom-10 left-58'>
 
-        <button className='bg-yellow-600 p-3 m-4 rounded-xl hover:scale-105 transition duration-500 text-white font-bold'>Get Connected</button>
+        <button className='bg-yellow-600 p-3 md:m-4 relative right-30 top-2 sm:left-1 rounded-xl hover:scale-105 transition duration-500 text-white font-bold'>Get Connected</button>
 
       </Link>
 

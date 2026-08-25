@@ -17,19 +17,19 @@ function SermonsChild(props) {
                         <img src={props.images} alt="" className='rounded-xl' />
 
 
-                        <h1 className="mb-2 text-2xl font-semibold text-[#041a4f]">
+                        <h1 className="mb-2 text-xl pt-4 md:text-2xl font-semibold text-[#041a4f]">
                             {props.names}
                         </h1>
 
-                        <p className="w-full p-6 text-xl leading-10 text-gray-600 md:text-xl text-center">
+                        <p className="w-full text-xl leading-10 text-gray-600 md:text-xl text-center">
                             {props.subs}
                         </p>
 
-                        <p className=" w-full p-4 text-base leading-7 text-gray-600  md:text-sm">
+                        <p className=" w-full text-base leading-7 text-gray-600  md:text-sm">
                             {props.pastors}
                         </p>
 
-                        <p className="text-yellow-300 font-semibold text-left">
+                        <p className="text-yellow-300 p-4 font-semibold text-left">
                             {props.buttons}
                         </p>
                     </div>

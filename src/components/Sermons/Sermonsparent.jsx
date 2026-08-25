@@ -8,7 +8,7 @@ function Sermonsparent() {
          
 
 
-            <div className='mx-10 grid md:grid-cols-3 gap-5'>
+            <div className='mx-3 md:mx-8 grid md:grid-cols-3 gap-5'>
                 {
                     Sermons.map((proj) => (
                         <SermonsChild

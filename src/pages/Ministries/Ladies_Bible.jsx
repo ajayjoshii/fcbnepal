@@ -13,9 +13,9 @@ function Ladies_Bible() {
         </p>
       </div>
 
-      <div className='flex items-center justify-center p-4 gap-6'>
+      <div className='flex items-center flex-col md:flex-row justify-center p-4 gap-6'>
         <div className='flex flex-col gap-6 max-w-xl rounded-xl bg-yellow-50 p-6'>
-          <FaLeaf className='text-4xl text-green-400' />
+          <FaLeaf className='text-2xl md:text-4xl text-green-400' />
           <h1 className='font-bold text-3xl text-left'>Our Ladies Bible Studies</h1>
           <p className='text-sm'>We gather regularly to open God's Word, share life honestly, pray for one another, and grow in Christ together.</p>
           <p className='flex flex-col p-6 text-sm rounded-2xl bg-blue-50  text-left'>
@@ -37,7 +37,7 @@ function Ladies_Bible() {
 
       <Link to='/plan-a-visit' className='text-left relative bottom-10 left-58'>
 
-        <button className='bg-yellow-600 p-3 m-4 rounded-xl hover:scale-105 transition duration-500 text-white font-bold'>Get Connected</button>
+        <button className='bg-yellow-600 p-3 m-4 relative right-35 md:left-0.5 rounded-xl hover:scale-105 transition duration-500 text-white font-bold'>Get Connected</button>
 
       </Link>
 

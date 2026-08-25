@@ -6,7 +6,7 @@ function StatementOfFaithparent() {
     return (
         <>
                  
-            <div className='grid text-center grid-cols-1 md:grid-cols-1 gap-6 md:ml-10 md:mr-15 rounded-sm'>
+            <div className='grid text-center grid-cols-1 md:grid-cols-1 gap-6 md:ml-10 md:mr-15 rounded-sm ml-4 mr-4'>
                 {
                     StatementOfFaith.map((proj) => (
                         <StatementOfFaithsChild

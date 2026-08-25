@@ -38,21 +38,21 @@ function StatementOfFaithsChild(props) {
             <div className="relative p-7">
                 
                 {/* Number - top left */}
-                <span className="absolute bg-yellow-300 p-3 rounded-full top-5 left-12 text-xl font-bold text-[#041a4f]">
+                <span className="absolute bg-yellow-300 p-2 rounded-full top-5 left-13 text-xl font-bold text-[#041a4f]">
                     {props.num}
                 </span>
 
                 {/* Name + Description */}
                 <div className="">
-                    <h1 className="mb-2 text-2xl text-left ml-20 font-semibold text-[#041a4f]">
+                    <h1 className="mb-2 md:text-2xl text-xl text-left ml-20 font-semibold text-[#041a4f]">
                         {props.names}
                     </h1>
 
-                    <p className="w-full p-6 text-justify text-xl leading-10 text-gray-600 md:text-xl">
+                    <p className="w-full p-6 text-justify text-sm leading-10 text-gray-600 md:text-xl">
                         {props.descs}
                     </p>
 
-                    <p className=" w-full p-4 text-justify text-base leading-7 text-gray-600 md:text-sm">
+                    <p className=" w-full p-4 text-justify text-sm leading-7 text-gray-600 md:text-sm">
                         {props.bibles}
                     </p>
                 </div>
