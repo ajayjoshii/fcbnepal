@@ -18,7 +18,7 @@ const Footer = () => {
               <div className="w-10 h-10 min-w-10 rounded-full bg-[#ed9400] flex items-center justify-center">
                 <div className="w-5 h-5 bg-[#7045d8] border border-white flex items-center justify-center text-white text-xs overflow-hidden">
                   <img
-                    src="/logos.jpg"
+                    src="/faith.jpeg"
                     alt="Augraha Community"
                     className="w-full h-full object-cover"
                   />
@@ -27,11 +27,13 @@ const Footer = () => {
 
               <div>
                 <h2 className="text-white text-[17px] sm:text-[19px] font-bold">
-                  Augraha Community
+                  Faith Community
+
                 </h2>
 
                 <p className="text-[#f5a000] text-[8px] sm:text-[9px] font-bold tracking-[3px]">
-                  CHURCH
+                  Baptist Church
+
                 </p>
               </div>
             </div>

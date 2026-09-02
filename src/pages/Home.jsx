@@ -6,7 +6,6 @@ function Home() {
   return (
     <>
     <Hero/>
-    <Contact/>
     </>
   )
 }
