@@ -7,7 +7,7 @@ function Church_CovenantChild(props) {
 
             <div className="my-6 rounded-2xl border border-gray-200 bg-white shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
 
-                <div className="relative p-7">
+                <div className=" p-7">
                     
 
                     {/* Number - top left */}

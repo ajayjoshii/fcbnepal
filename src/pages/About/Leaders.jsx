@@ -6,7 +6,7 @@ export default function AboutHero() {
   return (
     <section className="bg-white ">
       <div className="mx-auto px-6 py-20 sm:px-8 lg:px-12 bg-blue-900">
-        <div className="flex justify-center flex-col items-center min-w-screen  ">
+        <div className="flex justify-center flex-col items-center   ">
           <p className="mb-4 pt-10 text-sm text-yellow-400 font-semibold uppercase tracking-widest">
             About Our Church
           </p>
@@ -15,7 +15,7 @@ export default function AboutHero() {
             Our Leaders
           </h1>
 
-          <p className="mt-6 max-w-2xl text-center text-lg leading-8 text-white">
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-justify text-white">
             Faithful servants committed to biblical teaching, shepherding,
             discipleship, and the care of God&apos;s people.
           </p>

@@ -23,10 +23,10 @@ function Navbar() {
 
           <h1 className='font-bold text-center text-sm'>Anugraha <br /> Church</h1>
         </NavLink>
-        <button onClick={() => setOpen(!open)} className='font-bold md:hidden bg-blue-400 p-2 hover:scale-105 transition duration-500 ease-in-out m-2'>{open ? <HiOutlineX /> : <HiOutlineMenu />}</button>
+        <button onClick={() => setOpen(!open)} className='font-bold md:hidden bg-blue-400 px-3 hover:scale-105 transition duration-500 ease-in-out relative right-4'>{open ? <HiOutlineX /> : <HiOutlineMenu />}</button>
 
 
-        <ul className='md:flex hidden gap-6 mr-80 font-semibold items-center'>
+        <ul className='sm:flex hidden gap-6 mr-80 font-semibold items-center'>
 
           {navLinks.map((link, index) => (
 
@@ -223,7 +223,8 @@ function Navbar() {
                 ) : (
                   <Link
                     onClick={() => {
-                      ScrollTop, setOpen(false)
+                      ScrollTop();
+                      setOpen(false)
 
 
                     }
