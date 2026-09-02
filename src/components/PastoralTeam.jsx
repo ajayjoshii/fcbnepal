@@ -8,14 +8,14 @@ function PastoralTeams(props) {
                 <img
                     src={props.image}
                     alt={props.title}
-                    className="h-120 md:h-92 w-full transition-transform duration-700 group-hover:scale-105"
+                    className="h-60 md:h-92 w-full max-w-md sm:w-full transition-transform duration-700 group-hover:scale-105"
                 />
 
                 <div className="absolute inset-0 from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-500" />
             </div>
 
             <div className="p-7">
-                <h1 className=" text-xl relative bottom-27 left-25 md:top-62 md:right-70 rounded-sm w-45 py-1 font-semibold text-white text-center transition-all duration-300 bg-[#041a4f]">
+                <h1 className=" text-xl relative bottom-27 sm:ml-0 ml-25 md:top-62 md:right-70 rounded-sm w-45 py-1 font-semibold text-white text-center transition-all duration-300 bg-[#041a4f]">
                     {props.title}
                 </h1>
 

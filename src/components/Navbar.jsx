@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { HiOutlineMenu, HiOutlineX } from 'react-icons/hi'
+import { HiChevronDown, HiOutlineMenu, HiOutlineX } from 'react-icons/hi'
 import { Link, NavLink } from 'react-router-dom'
 import { navLinks } from '../constants/Navlinks'
 
@@ -16,21 +16,23 @@ function Navbar() {
   }
 
   return (
-    <nav className='bg-[#041a4f] text-white fixed w-full h-17 z-20 border-b-2 border-gray-400'>
-      <div className='flex justify-between p-4'>
+    <nav className='bg-[#041a4f] text-white fixed w-full h-20 z-20 border-b-2 sm:flex sm:items-center border-gray-400'>
+      <div className='flex justify-between items-center'>
         <NavLink to="/" className="flex gap-2 hover:scale-105 duration-700 ease-in-out items-center ml-6">
-          <img src="/logos.jpg" alt="logo" className='h-10 w-10' />
+          <img src="/church-logo.jpg" alt="logo" className='h-10 relative top-4 sm:top-0' />
 
-          <h1 className='font-bold text-center text-sm'>Anugraha <br /> Church</h1>
+        
         </NavLink>
-        <button onClick={() => setOpen(!open)} className='font-bold md:hidden bg-blue-400 px-3 hover:scale-105 transition duration-500 ease-in-out relative right-4'>{open ? <HiOutlineX /> : <HiOutlineMenu />}</button>
+        <button onClick={() => setOpen(!open)} className='font-bold md:hidden bg-blue-400 py-3 px-3 hover:scale-105 transition duration-500 ease-in-out relative right-4 top-4'>{open ? <HiOutlineX /> : <HiOutlineMenu />}</button>
 
 
-        <ul className='sm:flex hidden gap-6 mr-80 font-semibold items-center'>
+        <ul className='sm:flex hidden gap-6 font-semibold items-center relative left-85'>
 
           {navLinks.map((link, index) => (
 
-            <li key={index} className='relative hover:scale-105 duration-700'>
+            <li key={index} className={`relative px-3 py-1 rounded-lg ${
+      index === 0 ? "bg-white text-orange-500" : ""
+    }`}>
 
               {link.submenu ? (
                 <>
@@ -38,9 +40,9 @@ function Navbar() {
                     onClick={() =>
                       setDropdown(dropdown === link.name ? null : link.name)
                     }
-                    className='cursor-pointer transition'
+                    className='cursor-pointer transition flex items-center gap-1'
                   >
-                    {link.name} ▼
+                    {link.name} <HiChevronDown/>
                   </button>
 
                   {dropdown === link.name && (
@@ -153,7 +155,7 @@ function Navbar() {
                     ${dropdown === link.name ? "rotate-180" : ""}
                   `}
                       >
-                        ▼
+                      <HiChevronDown/>
                       </span>
                     </button>
 
@@ -276,8 +278,8 @@ function Navbar() {
       }
 
 
-      <Link to="/plan-a-visit" className='relative left-270 bottom-14 text-center'>
-        <p className='text-sm rounded text-[#041a4f] font-bold bg-white hover:scale-105 duration-700 w-30 p-2'>Plan a Visit</p>
+      <Link to="/plan-a-visit" className='relative left-155 text-center'>
+        <p className='text-sm bg-orange-400 text-white font-bold rounded-2xl hover:scale-105 duration-700 w-30 p-2'>Plan a Visit</p>
 
       </Link>
     </nav>
