@@ -1,6 +1,6 @@
 import React from 'react'
-import { StatementOfFaith } from '../../constants/statementOfFaith'
 import StatementOfFaithsChild from './StatementOfFaithsChild'
+import { StatementOfFaith } from './../../constants/StatementOfFaith';
 
 function StatementOfFaithparent() {
     return (
