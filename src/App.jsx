@@ -18,18 +18,18 @@ function App() {
   return (
     <>
       <Navbar />
-      <ScrollToTop/>
-       <Routes>
-        {/* <Route path='/' element={<Home />} /> */}
-         <Route path='/about/our-leaders' element={<AboutHero />} />
+      <ScrollToTop />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about/our-leaders' element={<AboutHero />} />
         <Route path='/plan-a-visit' element={<Contact />} />
         <Route path='/about/statement-of-faith' element={<Statementfaith />} />
         <Route path='/about/church-covenant' element={<Church_CovenantParent />} />
         <Route path='/ministries/ladies-bible-studies' element={<Ladies_Bible />} />
         <Route path='/ministries/mens-bible-studies' element={<Mens_Bible />} />
-        <Route path='/ministries/pastoral-internship' element={<Pastoral/>} />
-        <Route path='/ministries/sunday-school' element={<Sunday/>} />
-        <Route path='/sermons' element={<Sermons/>} />
+        <Route path='/ministries/pastoral-internship' element={<Pastoral />} />
+        <Route path='/ministries/sunday-school' element={<Sunday />} />
+        <Route path='/sermons' element={<Sermons />} />
       </Routes>
       <Footer />
 
