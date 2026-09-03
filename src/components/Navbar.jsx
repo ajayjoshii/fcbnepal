@@ -327,7 +327,7 @@ function Navbar() {
         {/* ================= MOBILE MENU BUTTON ================= */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden bg-blue-400 p-3 rounded-md hover:scale-105 transition duration-500"
+          className="md:hidden bg-blue-400 p-2 hover:scale-105 transition duration-500"
         >
           {open ? <HiOutlineX size={24} /> : <HiOutlineMenu size={24} />}
         </button>
