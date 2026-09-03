@@ -1,3 +1,294 @@
+// import React, { useState } from 'react'
+// import { HiChevronDown, HiOutlineMenu, HiOutlineX } from 'react-icons/hi'
+// import { Link, NavLink } from 'react-router-dom'
+// import { navLinks } from '../constants/Navlinks'
+
+// function Navbar() {
+//   const [open, setOpen] = useState(false)
+//   const [dropdown, setDropdown] = useState(null)
+
+
+//   const ScrollTop = () => {
+//     window.scrollTo({
+//       top: 0,
+//       behavior: "smooth"
+//     })
+//   }
+
+//   return (
+//     <nav className='bg-[#041a4f] text-white fixed w-full h-20 z-20 border-b-2 sm:flex sm:items-center border-gray-400'>
+//       <div className='flex justify-between items-center'>
+//         <NavLink to="/" className="flex gap-2 hover:scale-105 duration-700 ease-in-out items-center ml-6">
+//           <img src="/church-logo.jpg" alt="logo" className='h-10 relative top-4 sm:top-0' />
+
+        
+//         </NavLink>
+//         <button onClick={() => setOpen(!open)} className='font-bold md:hidden bg-blue-400 py-3 px-3 hover:scale-105 transition duration-500 ease-in-out relative right-4 top-4'>{open ? <HiOutlineX /> : <HiOutlineMenu />}</button>
+
+
+//         <ul className='sm:flex hidden gap-6 font-semibold items-center relative left-85'>
+
+//           {navLinks.map((link, index) => (
+
+//             <li key={index} className={`relative px-3 py-1 rounded-lg ${
+//       index === 0 ? "bg-white text-orange-500" : ""
+//     }`}>
+
+//               {link.submenu ? (
+//                 <>
+//                   <button
+//                     onClick={() =>
+//                       setDropdown(dropdown === link.name ? null : link.name)
+//                     }
+//                     className='cursor-pointer transition flex items-center gap-1'
+//                   >
+//                     {link.name} <HiChevronDown/>
+//                   </button>
+
+//                   {dropdown === link.name && (
+//                     <ul className='absolute top-11 left-0 bg-white text-black shadow-lg rounded w-48 p-2 z-50'>
+
+//                       {link.submenu.map((item, index) => (
+//                         <li
+//                           key={index}
+//                           className='p-2 hover:bg-gray-200 rounded'
+//                         >
+//                           <Link
+//                             to={item.path}
+//                             onClick={() => {
+//                               setDropdown(null),
+//                                 ScrollTop
+
+
+//                             }
+
+
+//                             }
+//                           >
+//                             {item.name}
+//                           </Link>
+//                         </li>
+//                       ))}
+
+//                     </ul>
+//                   )}
+//                 </>
+//               ) : (
+//                 <Link onClick={ScrollTop} to={link.path}>
+//                   {link.name}
+//                 </Link>
+//               )}
+
+//             </li>
+
+//           ))}
+
+//         </ul>
+
+//       </div>
+
+//       {
+//         open && (
+//           <ul className="md:hidden bg-zinc-100 text-black
+//       flex flex-col
+//       gap-2 md:gap-7
+//       md:mr-80
+//       font-semibold
+//       w-full md:w-auto h-85
+//       items-start md:items-center absolute top-17
+//      md:mt-0
+//       p-3 md:p-0
+//        md:rounded-none
+//        md:bg-transparent
+    
+//       border border-white/20 md:border-0
+//       shadow-xl md:shadow-none
+//     ">
+
+//             {navLinks.map((link, index) => (
+//               <li key={index} className="relative w-full md:w-auto text-black">
+
+//                 {link.submenu ? (
+//                   <>
+//                     <button
+//                       onClick={() =>
+//                         setDropdown(
+//                           dropdown === link.name ? null : link.name
+//                         )
+//                       }
+//                       className="
+//                   group
+//                   flex items-center gap-2
+//                   px-4 py-3 md:px-0 md:py-2
+//                   rounded-xl md:rounded-none
+                  
+//                   transition-colors duration-300
+//                   hover:text-yellow-400
+//                 "
+//                     >
+//                       <span className="relative">
+//                         {link.name}
+
+//                         {/* Underline only under text */}
+//                         <span className="
+//                     absolute
+//                     left-0
+//                     -bottom-1
+//                     h-[2px]
+//                     w-0
+//                     rounded-full
+//                     bg-gradient-to-r
+//                     from-yellow-300
+//                     to-orange-500
+//                     shadow-[0_0_8px_rgba(250,204,21,0.7)]
+//                     transition-all
+//                     duration-500
+//                     group-hover:w-full text-black
+//                   " />
+//                       </span>
+
+//                       <span
+//                         className={`
+//                     text-xs
+//                     transition-transform
+//                     duration-300
+//                     ${dropdown === link.name ? "rotate-180" : ""}
+//                   `}
+//                       >
+//                       <HiChevronDown/>
+//                       </span>
+//                     </button>
+
+//                     {dropdown === link.name && (
+//                       <ul className=" text-black
+//                       absolute left-30 top-1
+//                   md:absolute
+//                   md:top-12
+//                   md:left-1/2
+//                   w-40 md:w-56
+//                   mt-2 md:mt-0
+//                   p-2
+//                   rounded-sm
+//                   bg-white/95
+//                   backdrop-blur-xl
+//                   border border-gray-200
+//                   shadow-[0_15px_40px_rgba(0,0,0,0.18)]
+//                   z-50
+//                   animate-[dropdown_0.3s_ease-out]
+//                 ">
+//                         {link.submenu.map((item, index) => (
+//                           <li key={index}>
+//                             <Link
+//                               to={item.path}
+//                               onClick={() => {
+//                                 setDropdown(null);
+//                                 ScrollTop();
+//                                 setOpen(false)
+//                               }}
+//                               className="
+//                           group/item
+//                           block
+//                           px-4 py-3
+//                           rounded-xl
+//                           text-black
+//                           text-sm
+//                           transition-colors
+//                           duration-300
+//                           hover:bg-blue-50
+//                           hover:text-blue-900
+//                         "
+//                             >
+//                               <span className="relative inline-block">
+//                                 {item.name}
+
+//                                 {/* Underline only under text */}
+//                                 <span className="
+//                             absolute
+//                             left-0
+//                             -bottom-1 text-black
+//                             h-[2px]
+//                             w-0
+//                             rounded-full
+//                             bg-yellow-500
+//                             transition-all
+//                             duration-300
+//                             group-hover/item:w-full
+//                           " />
+//                               </span>
+//                             </Link>
+//                           </li>
+//                         ))}
+//                       </ul>
+//                     )}
+
+//                   </>
+//                 ) : (
+//                   <Link
+//                     onClick={() => {
+//                       ScrollTop();
+//                       setOpen(false)
+
+
+//                     }
+
+
+
+//                     }
+//                     to={link.path}
+//                     className="
+//                 group
+//                 inline-block
+//                 px-4 py-3
+//                 md:px-0 md:py-2
+//                 rounded-xl md:rounded-none
+                
+//                 transition-colors
+//                 duration-300
+//                 hover:text-yellow-400
+//               "
+//                   >
+//                     <span className="relative inline-block">
+//                       {link.name}
+
+//                       {/* Underline only under text */}
+//                       <span className="
+//                   absolute
+//                   left-0
+//                   -bottom-1
+//                   h-[2px]
+//                   w-0
+//                   rounded-full
+//                   bg-gradient-to-r
+//                   from-yellow-300
+//                   to-orange-500
+//                   shadow-[0_0_8px_rgba(250,204,21,0.7)]
+//                   transition-all
+//                   duration-500 text-black
+//                   group-hover:w-full
+//                 " />
+//                     </span>
+//                   </Link>
+//                 )}
+
+//               </li>
+//             ))}
+
+//           </ul>
+//         )
+//       }
+
+
+//       <Link to="/plan-a-visit" className='relative left-155 text-center'>
+//         <p className='text-sm bg-orange-400 text-white font-bold rounded-2xl hover:scale-105 duration-700 w-30 p-2'>Plan a Visit</p>
+
+//       </Link>
+//     </nav>
+//   )
+// }
+
+// export default Navbar
+
+
 import React, { useState } from 'react'
 import { HiChevronDown, HiOutlineMenu, HiOutlineX } from 'react-icons/hi'
 import { Link, NavLink } from 'react-router-dom'
@@ -7,7 +298,6 @@ function Navbar() {
   const [open, setOpen] = useState(false)
   const [dropdown, setDropdown] = useState(null)
 
-
   const ScrollTop = () => {
     window.scrollTo({
       top: 0,
@@ -16,54 +306,74 @@ function Navbar() {
   }
 
   return (
-    <nav className='bg-[#041a4f] text-white fixed w-full h-20 z-20 border-b-2 sm:flex sm:items-center border-gray-400'>
-      <div className='flex justify-between items-center'>
-        <NavLink to="/" className="flex gap-2 hover:scale-105 duration-700 ease-in-out items-center ml-6">
-          <img src="/church-logo.jpg" alt="logo" className='h-10 relative top-4 sm:top-0' />
+    <nav className="bg-[#041a4f] text-white fixed w-full h-20 z-20 border-b-2 border-gray-400">
 
-        
+      {/* ================= NAVBAR HEADER ================= */}
+      <div className="flex justify-between items-center h-full px-4 sm:px-0">
+
+        {/* LOGO */}
+        <NavLink
+          to="/"
+          className="flex gap-2 hover:scale-105 duration-700 ease-in-out items-center ml-0 sm:ml-6"
+        >
+          <img
+            src="/church-logo.jpg"
+            alt="logo"
+            className="h-10 relative top-0"
+          />
         </NavLink>
-        <button onClick={() => setOpen(!open)} className='font-bold md:hidden bg-blue-400 py-3 px-3 hover:scale-105 transition duration-500 ease-in-out relative right-4 top-4'>{open ? <HiOutlineX /> : <HiOutlineMenu />}</button>
 
 
-        <ul className='sm:flex hidden gap-6 font-semibold items-center relative left-85'>
+        {/* ================= MOBILE MENU BUTTON ================= */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden bg-blue-400 p-3 rounded-md hover:scale-105 transition duration-500"
+        >
+          {open ? <HiOutlineX size={24} /> : <HiOutlineMenu size={24} />}
+        </button>
+
+
+        {/* ================= DESKTOP MENU ================= */}
+        <ul className="hidden md:flex gap-6 font-semibold items-center relative left-85">
 
           {navLinks.map((link, index) => (
 
-            <li key={index} className={`relative px-3 py-1 rounded-lg ${
-      index === 0 ? "bg-white text-orange-500" : ""
-    }`}>
+            <li
+              key={index}
+              className={`relative px-3 py-1 rounded-lg ${
+                index === 0 ? "bg-white text-orange-500" : ""
+              }`}
+            >
 
               {link.submenu ? (
                 <>
                   <button
                     onClick={() =>
-                      setDropdown(dropdown === link.name ? null : link.name)
+                      setDropdown(
+                        dropdown === link.name ? null : link.name
+                      )
                     }
-                    className='cursor-pointer transition flex items-center gap-1'
+                    className="cursor-pointer transition flex items-center gap-1"
                   >
-                    {link.name} <HiChevronDown/>
+                    {link.name}
+                    <HiChevronDown />
                   </button>
 
+
                   {dropdown === link.name && (
-                    <ul className='absolute top-11 left-0 bg-white text-black shadow-lg rounded w-48 p-2 z-50'>
+                    <ul className="absolute top-11 left-0 bg-white text-black shadow-lg rounded w-48 p-2 z-50">
 
                       {link.submenu.map((item, index) => (
                         <li
                           key={index}
-                          className='p-2 hover:bg-gray-200 rounded'
+                          className="p-2 hover:bg-gray-200 rounded"
                         >
                           <Link
                             to={item.path}
                             onClick={() => {
-                              setDropdown(null),
-                                ScrollTop
-
-
-                            }
-
-
-                            }
+                              setDropdown(null)
+                              ScrollTop()
+                            }}
                           >
                             {item.name}
                           </Link>
@@ -74,7 +384,10 @@ function Navbar() {
                   )}
                 </>
               ) : (
-                <Link onClick={ScrollTop} to={link.path}>
+                <Link
+                  onClick={ScrollTop}
+                  to={link.path}
+                >
                   {link.name}
                 </Link>
               )}
@@ -85,203 +398,245 @@ function Navbar() {
 
         </ul>
 
+
+        {/* ================= PLAN A VISIT DESKTOP ================= */}
+        <Link
+          to="/plan-a-visit"
+          className="hidden md:block relative left-155 text-center"
+        >
+          <p className="text-sm bg-orange-400 text-white font-bold rounded-2xl hover:scale-105 duration-700 w-30 p-2">
+            Plan a Visit
+          </p>
+        </Link>
+
       </div>
 
-      {
-        open && (
-          <ul className="md:hidden bg-zinc-100 text-black
-      flex flex-col
-      gap-2 md:gap-7
-      md:mr-80
-      font-semibold
-      w-full md:w-auto h-85
-      items-start md:items-center absolute top-17
-     md:mt-0
-      p-3 md:p-0
-       md:rounded-none
-       md:bg-transparent
-    
-      border border-white/20 md:border-0
-      shadow-xl md:shadow-none
-    ">
+
+      {/* ===================================================== */}
+      {/* ================= MOBILE MENU ======================== */}
+      {/* ===================================================== */}
+
+      {open && (
+        <div className="md:hidden absolute top-20 left-0 w-full bg-zinc-100 text-black shadow-xl border-t border-gray-300">
+
+          <ul className="flex flex-col gap-1 p-3 font-semibold">
 
             {navLinks.map((link, index) => (
-              <li key={index} className="relative w-full md:w-auto text-black">
+
+              <li
+                key={index}
+                className="relative w-full"
+              >
 
                 {link.submenu ? (
                   <>
+                    {/* MOBILE DROPDOWN BUTTON */}
+
                     <button
                       onClick={() =>
                         setDropdown(
-                          dropdown === link.name ? null : link.name
+                          dropdown === link.name
+                            ? null
+                            : link.name
                         )
                       }
-                      className="
-                  group
-                  flex items-center gap-2
-                  px-4 py-3 md:px-0 md:py-2
-                  rounded-xl md:rounded-none
-                  
-                  transition-colors duration-300
-                  hover:text-yellow-400
-                "
+                      className="group flex items-center justify-between w-full px-4 py-3 rounded-xl transition-colors duration-300 hover:bg-blue-50"
                     >
+
                       <span className="relative">
+
                         {link.name}
 
-                        {/* Underline only under text */}
-                        <span className="
-                    absolute
-                    left-0
-                    -bottom-1
-                    h-[2px]
-                    w-0
-                    rounded-full
-                    bg-gradient-to-r
-                    from-yellow-300
-                    to-orange-500
-                    shadow-[0_0_8px_rgba(250,204,21,0.7)]
-                    transition-all
-                    duration-500
-                    group-hover:w-full text-black
-                  " />
+                        <span
+                          className="
+                          absolute
+                          left-0
+                          -bottom-1
+                          h-[2px]
+                          w-0
+                          rounded-full
+                          bg-gradient-to-r
+                          from-yellow-300
+                          to-orange-500
+                          transition-all
+                          duration-500
+                          group-hover:w-full
+                          "
+                        />
+
                       </span>
+
 
                       <span
                         className={`
-                    text-xs
-                    transition-transform
-                    duration-300
-                    ${dropdown === link.name ? "rotate-180" : ""}
-                  `}
+                          text-xs
+                          transition-transform
+                          duration-300
+                          ${
+                            dropdown === link.name
+                              ? "rotate-180"
+                              : ""
+                          }
+                        `}
                       >
-                      <HiChevronDown/>
+                        <HiChevronDown />
                       </span>
+
                     </button>
 
+
+                    {/* MOBILE SUBMENU */}
+
                     {dropdown === link.name && (
-                      <ul className=" text-black
-                      absolute left-30 top-1
-                  md:absolute
-                  md:top-12
-                  md:left-1/2
-                  w-40 md:w-56
-                  mt-2 md:mt-0
-                  p-2
-                  rounded-sm
-                  bg-white/95
-                  backdrop-blur-xl
-                  border border-gray-200
-                  shadow-[0_15px_40px_rgba(0,0,0,0.18)]
-                  z-50
-                  animate-[dropdown_0.3s_ease-out]
-                ">
+                      <ul
+                        className="
+                        mt-1
+                        ml-4
+                        w-[calc(100%-1rem)]
+                        bg-white
+                        rounded-lg
+                        border
+                        border-gray-200
+                        shadow-md
+                        p-2
+                        "
+                      >
+
                         {link.submenu.map((item, index) => (
+
                           <li key={index}>
+
                             <Link
                               to={item.path}
                               onClick={() => {
-                                setDropdown(null);
-                                ScrollTop();
+                                setDropdown(null)
+                                ScrollTop()
                                 setOpen(false)
                               }}
                               className="
-                          group/item
-                          block
-                          px-4 py-3
-                          rounded-xl
-                          text-black
-                          text-sm
-                          transition-colors
-                          duration-300
-                          hover:bg-blue-50
-                          hover:text-blue-900
-                        "
+                              group/item
+                              block
+                              px-4
+                              py-3
+                              rounded-xl
+                              text-black
+                              text-sm
+                              transition-colors
+                              duration-300
+                              hover:bg-blue-50
+                              hover:text-blue-900
+                              "
                             >
+
                               <span className="relative inline-block">
+
                                 {item.name}
 
-                                {/* Underline only under text */}
-                                <span className="
-                            absolute
-                            left-0
-                            -bottom-1 text-black
-                            h-[2px]
-                            w-0
-                            rounded-full
-                            bg-yellow-500
-                            transition-all
-                            duration-300
-                            group-hover/item:w-full
-                          " />
+                                <span
+                                  className="
+                                  absolute
+                                  left-0
+                                  -bottom-1
+                                  h-[2px]
+                                  w-0
+                                  rounded-full
+                                  bg-yellow-500
+                                  transition-all
+                                  duration-300
+                                  group-hover/item:w-full
+                                  "
+                                />
+
                               </span>
+
                             </Link>
+
                           </li>
+
                         ))}
+
                       </ul>
                     )}
 
                   </>
                 ) : (
+
+                  /* MOBILE NORMAL LINK */
+
                   <Link
                     onClick={() => {
-                      ScrollTop();
+                      ScrollTop()
                       setOpen(false)
-
-
-                    }
-
-
-
-                    }
+                    }}
                     to={link.path}
                     className="
-                group
-                inline-block
-                px-4 py-3
-                md:px-0 md:py-2
-                rounded-xl md:rounded-none
-                
-                transition-colors
-                duration-300
-                hover:text-yellow-400
-              "
+                    group
+                    block
+                    px-4
+                    py-3
+                    rounded-xl
+                    transition-colors
+                    duration-300
+                    hover:bg-blue-50
+                    hover:text-blue-900
+                    "
                   >
+
                     <span className="relative inline-block">
+
                       {link.name}
 
-                      {/* Underline only under text */}
-                      <span className="
-                  absolute
-                  left-0
-                  -bottom-1
-                  h-[2px]
-                  w-0
-                  rounded-full
-                  bg-gradient-to-r
-                  from-yellow-300
-                  to-orange-500
-                  shadow-[0_0_8px_rgba(250,204,21,0.7)]
-                  transition-all
-                  duration-500 text-black
-                  group-hover:w-full
-                " />
+                      <span
+                        className="
+                        absolute
+                        left-0
+                        -bottom-1
+                        h-[2px]
+                        w-0
+                        rounded-full
+                        bg-gradient-to-r
+                        from-yellow-300
+                        to-orange-500
+                        transition-all
+                        duration-500
+                        group-hover:w-full
+                        "
+                      />
+
                     </span>
+
                   </Link>
+
                 )}
 
               </li>
+
             ))}
 
+
+            {/* MOBILE PLAN A VISIT */}
+
+            <li className="pt-2 px-4 pb-2">
+
+              <Link
+                to="/plan-a-visit"
+                onClick={() => {
+                  ScrollTop()
+                  setOpen(false)
+                }}
+              >
+                <p className="text-sm text-center bg-orange-400 text-white font-bold rounded-2xl hover:scale-105 duration-500 w-full p-3">
+                  Plan a Visit
+                </p>
+              </Link>
+
+            </li>
+
           </ul>
-        )
-      }
 
+        </div>
+      )}
 
-      <Link to="/plan-a-visit" className='relative left-155 text-center'>
-        <p className='text-sm bg-orange-400 text-white font-bold rounded-2xl hover:scale-105 duration-700 w-30 p-2'>Plan a Visit</p>
-
-      </Link>
     </nav>
   )
 }
