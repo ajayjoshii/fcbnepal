@@ -306,7 +306,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="bg-[#041a4f] text-white h-20 z-20 border-b-2 border-gray-400">
+    <nav className="bg-[#041a4f] text-white h-20 fixed w-full z-200 border-b-2 border-gray-400">
 
       {/* ================= NAVBAR HEADER ================= */}
       <div className="flex justify-between items-center h-full px-4 sm:px-0">
