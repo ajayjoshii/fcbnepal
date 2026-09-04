@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Navbar from './components/Navbar';
 import AboutHero from './pages/About/Leaders';
@@ -13,6 +13,9 @@ import Mens_Bible from './pages/Ministries/Mens_Bible';
 import Pastoral from './pages/Ministries/Pastoral';
 import Sunday from './pages/Ministries/Sunday';
 import Sermons from './pages/Sermons';
+import AdminLogin from './pages/Admins/AdminLogin';
+import AdminRoute from './components/AdminRoute';
+import AdminDashboard from './pages/Admins/AdminDashboard';
 
 function App() {
   return (
@@ -30,6 +33,22 @@ function App() {
         <Route path='/ministries/pastoral-internship' element={<Pastoral />} />
         <Route path='/ministries/sunday-school' element={<Sunday />} />
         <Route path='/sermons' element={<Sermons />} />
+
+
+        <Route path="/admin/login" element={<AdminLogin />} />
+
+        <Route
+          path="/admin"
+          element={
+            <AdminRoute>
+              <AdminDashboard />
+            </AdminRoute>
+          }
+        />
+
+
+
+
       </Routes>
       <Footer />
 
