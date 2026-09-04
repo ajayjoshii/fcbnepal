@@ -789,8 +789,8 @@ function Navbar() {
 
                       <span
                         className={`text-xs transition-transform duration-300 ${dropdown === link.name
-                            ? "rotate-180"
-                            : ""
+                          ? "rotate-180"
+                          : ""
                           }`}
                       >
                         <HiChevronDown />
@@ -866,24 +866,26 @@ function Navbar() {
 
 
       )}
-      <div className='w-40 relative bottom-18 left-280'>
 
-        <li className="pt-2 px-4 pb-2">
+      <li className="pt-2 px-4 pb-2">
 
-          <Link
-            to="/plan-a-visit"
-            onClick={() => {
-              ScrollTop()
-              setOpen(false)
-            }}
-          >
-            <p className="text-sm text-center bg-orange-400  text-white font-bold rounded-sm hover:scale-105 duration-500 p-3">
-              Plan a Visit
-            </p>
-          </Link>
+        <Link
+          to="/plan-a-visit"
+          onClick={() => {
+            ScrollTop()
+            setOpen(false)
+          }}
+        >
+          <p className="text-sm text-center w-40 relative bottom-18 left-230 bg-orange-400  text-white font-bold rounded-sm hover:scale-105 duration-500 p-3">
+            Plan a Visit
+          </p>
+        </Link>
 
-        </li>
-      </div>
+      </li>
+
+      <Link to="/admin/login">
+        <button className='relative bottom-30 left-300 font-semibold hover:scale-105 duration-700 text-xl'>Login</button>
+        </Link>
 
 
     </nav>
