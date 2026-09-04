@@ -21,7 +21,7 @@
 //         <NavLink to="/" className="flex gap-2 hover:scale-105 duration-700 ease-in-out items-center ml-6">
 //           <img src="/church-logo.jpg" alt="logo" className='h-10 relative top-4 sm:top-0' />
 
-        
+
 //         </NavLink>
 //         <button onClick={() => setOpen(!open)} className='font-bold md:hidden bg-blue-400 py-3 px-3 hover:scale-105 transition duration-500 ease-in-out relative right-4 top-4'>{open ? <HiOutlineX /> : <HiOutlineMenu />}</button>
 
@@ -100,7 +100,7 @@
 //       p-3 md:p-0
 //        md:rounded-none
 //        md:bg-transparent
-    
+
 //       border border-white/20 md:border-0
 //       shadow-xl md:shadow-none
 //     ">
@@ -121,7 +121,7 @@
 //                   flex items-center gap-2
 //                   px-4 py-3 md:px-0 md:py-2
 //                   rounded-xl md:rounded-none
-                  
+
 //                   transition-colors duration-300
 //                   hover:text-yellow-400
 //                 "
@@ -241,7 +241,7 @@
 //                 px-4 py-3
 //                 md:px-0 md:py-2
 //                 rounded-xl md:rounded-none
-                
+
 //                 transition-colors
 //                 duration-300
 //                 hover:text-yellow-400
@@ -683,15 +683,14 @@ function Navbar() {
           {open ? <HiOutlineX size={24} /> : <HiOutlineMenu size={24} />}
         </button>
 
-        <ul className="hidden md:flex gap-6 font-semibold items-center relative left-85">
+        <ul className="hidden md:flex gap-6 font-semibold items-center relative right-1">
 
           {navLinks.map((link, index) => (
 
             <li
               key={index}
-              className={`relative px-3 py-1 rounded-lg ${
-                index === 0 ? "bg-white text-orange-500" : ""
-              }`}
+              className={`relative px-3 py-1 rounded-lg ${index === 0 ? "bg-white text-orange-500" : ""
+                }`}
             >
 
               {link.submenu ? (
@@ -789,11 +788,10 @@ function Navbar() {
                       </span>
 
                       <span
-                        className={`text-xs transition-transform duration-300 ${
-                          dropdown === link.name
+                        className={`text-xs transition-transform duration-300 ${dropdown === link.name
                             ? "rotate-180"
                             : ""
-                        }`}
+                          }`}
                       >
                         <HiChevronDown />
                       </span>
@@ -858,26 +856,35 @@ function Navbar() {
 
             ))}
 
-            <li className="pt-2 px-4 pb-2">
 
-              <Link
-                to="/plan-a-visit"
-                onClick={() => {
-                  ScrollTop()
-                  setOpen(false)
-                }}
-              >
-                <p className="text-sm text-center bg-orange-400 text-white font-bold rounded-2xl hover:scale-105 duration-500 w-full p-3">
-                  Plan a Visit
-                </p>
-              </Link>
-
-            </li>
 
           </ul>
 
+
+
         </div>
+
+
       )}
+      <div className='w-40 relative bottom-18 left-280'>
+
+        <li className="pt-2 px-4 pb-2">
+
+          <Link
+            to="/plan-a-visit"
+            onClick={() => {
+              ScrollTop()
+              setOpen(false)
+            }}
+          >
+            <p className="text-sm text-center bg-orange-400  text-white font-bold rounded-sm hover:scale-105 duration-500 p-3">
+              Plan a Visit
+            </p>
+          </Link>
+
+        </li>
+      </div>
+
 
     </nav>
   )
